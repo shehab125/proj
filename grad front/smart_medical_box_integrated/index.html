@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفا بوكس | Smart Medical Box</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/Capture.PNG" alt="" height="50" width="100">
+                <span class="text-primary">ِالفا بوكس</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about.html">نبذة عن المشروع</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/features.html">المميزات والتقنيات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/components.html">المكونات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/demo.html">العروض التوضيحية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/faq.html">الأسئلة الشائعة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contact.html">تواصل معنا</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="auth/login.html" class="btn btn-outline-primary me-2">تسجيل الدخول</a>
+                    <a href="auth/register.html" class="btn btn-primary">التسجيل</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero-section py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold mb-4">الفا بوكس</h1>
+                    <p class="lead mb-4">حل مبتكر لإدارة المرضي والتنبؤ بالحالة الصحية باستخدام الذكاء الاصطناعي وإنترنت الأشياء</p>
+                    <p class="mb-4">نظام متكامل لمراقبة المؤشرات الحيوية للمرضى باستخدام تقنيات الذكاء الاصطناعي والإنترنت</p>
+                    <div class="d-flex gap-3">
+                        <a href="pages/features.html" class="btn btn-primary btn-lg">استكشف المميزات</a>
+                        <a href="pages/demo.html" class="btn btn-outline-primary btn-lg">شاهد العرض التوضيحي</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/hero-image.png" alt="الفا بوكس" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>مميزات الفا بوكس</h2>
+                <p>تعرف على المميزات الرئيسية التي تجعل الفا بوكس حلاً مثالياً لمراقبة المؤشرات الحيوية</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="feature-title">مراقبة المؤشرات الحيوية</h3>
+                        <p>قياس ومراقبة درجة الحرارة، نسبة الأكسجين في الدم، ومعدل نبضات القلب بدقة عالية وبشكل مستمر.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.2s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="feature-title">الذكاء الاصطناعي</h3>
+                        <p>استخدام خوارزميات الذكاء الاصطناعي والتعلم الآلي للكشف عن القيم غير الطبيعية والتنبؤ بالحالات الحرجة.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.4s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3 class="feature-title">نظام التنبيهات</h3>
+                        <p>إرسال تنبيهات فورية للطاقم الطبي في حالة وجود قيم خارج النطاق الطبيعي، مما يسمح بالتدخل السريع.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.6s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">تحليل البيانات</h3>
+                        <p>تحليل البيانات التاريخية وعرضها في رسوم بيانية تفاعلية لمساعدة الأطباء في اتخاذ القرارات الطبية.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.8s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="feature-title">تخزين سحابي</h3>
+                        <p>تخزين البيانات في السحابة مع إمكانية الوصول إليها من أي مكان وفي أي وقت، مع ضمان أمان وخصوصية البيانات.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up" style="animation-delay: 1s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="feature-title">واجهة سهلة الاستخدام</h3>
+                        <p>واجهة مستخدم بسيطة وسهلة الاستخدام، متوافقة مع جميع الأجهزة (الكمبيوتر، الجهاز اللوحي، الهاتف الذكي).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image animate-slide-right">
+                        <img src="#" alt="الفا بوكس" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content animate-slide-left">
+                        <h2>نبذة عن مشروع الفا بوكس</h2>
+                        <p>الفا بوكس (Smart Medical Box) هو مشروع تخرج مبتكر تم تطويره بواسطة فريق من 10 طلاب في قسم الذكاء الاصطناعي. يهدف المشروع إلى تطوير نظام ذكي يقوم بقياس ومراقبة المؤشرات الحيوية للمريض باستخدام مستشعرات متصلة بصندوق طبي، ثم تحليل هذه البيانات باستخدام تقنيات الذكاء الاصطناعي والتعلم الآلي.</p>
+                        <p>يتكون المشروع من جزء هاردوير (صندوق طبي يحتوي على مستشعرات) وجزء سوفت وير (خادم خلفي، قاعدة بيانات، نماذج ذكاء اصطناعي، واجهة مستخدم). يهدف المشروع إلى تسهيل عملية مراقبة المرضى عن بُعد، وتقليل الوقت اللازم لتشخيص الحالات الحرجة، ودعم اتخاذ القرار الطبي باستخدام الذكاء الاصطناعي.</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">3</div>
+                                <div class="stat-label">مؤشرات حيوية</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">99%</div>
+                                <div class="stat-label">دقة القياس</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">24/7</div>
+                                <div class="stat-label">مراقبة مستمرة</div>
+                            </div>
+                        </div>
+                        <a href="pages/about.html" class="btn btn-primary mt-4">اقرأ المزيد</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="interactive-demo-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>عرض تفاعلي للمؤشرات الحيوية</h2>
+                <p>جرب محاكاة لوحة التحكم وشاهد كيف يعمل نظام التنبيهات</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="interactive-demo-container">
+                        <div class="vital-signs-chart-container">
+                            <canvas id="vitalSignsChart"></canvas>
+                        </div>
+                        <div class="demo-controls" id="demoControls">
+                            <h3>تحكم في المؤشرات الحيوية</h3>
+                            <p>استخدم أشرطة التمرير أدناه لتغيير قيم المؤشرات الحيوية وشاهد كيف يستجيب النظام:</p>
+                            
+                            <div class="vital-sign-control">
+                                <label for="heartRateSlider">معدل النبض: <span id="heartRateValue">75</span> نبضة/دقيقة</label>
+                                <input type="range" class="form-range" id="heartRateSlider" min="40" max="140" value="75">
+                                <div class="range-info d-flex justify-content-between">
+                                    <small>40</small>
+                                    <small class="text-success">60-100 (طبيعي)</small>
+                                    <small>140</small>
+                                </div>
+                            </div>
+                            
+                            <div class="vital-sign-control">
+                                <label for="temperatureSlider">درجة الحرارة: <span id="temperatureValue">37.0</span> °C</label>
+                                <input type="range" class="form-range" id="temperatureSlider" min="35.0" max="40.0" step="0.1" value="37.0">
+                                <div class="range-info d-flex justify-content-between">
+                                    <small>35.0</small>
+                                    <small class="text-success">36.5-37.5 (طبيعي)</small>
+                                    <small>40.0</small>
+                                </div>
+                            </div>
+                            
+                            <div class="vital-sign-control">
+                                <label for="oxygenSlider">نسبة الأكسجين: <span id="oxygenValue">98</span> %</label>
+                                <input type="range" class="form-range" id="oxygenSlider" min="80" max="100" value="98">
+                                <div class="range-info d-flex justify-content-between">
+                                    <small>80</small>
+                                    <small class="text-success">95-100 (طبيعي)</small>
+                                    <small>100</small>
+                                </div>
+                            </div>
+                            
+                            <div class="alerts-container mt-4" id="alertsContainer">
+                                <!-- Alerts will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Device Demo Section -->
+    <section class="device-demo-section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>محاكاة الفا بوكس</h2>
+                <p>جرب محاكاة للفا بوكس وشاهد كيف يعمل</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="device-demo" id="deviceDemo">
+                        <div class="device-container">
+                            <div class="device-screen" id="deviceScreen">
+                                <div id="deviceStatus">الجهاز متوقف</div>
+                                <div class="device-readings">
+                                    <div class="reading-item">
+                                        <span class="reading-label">معدل النبض:</span>
+                                        <span class="reading-value" id="heartRateDisplay">--</span>
+                                    </div>
+                                    <div class="reading-item">
+                                        <span class="reading-label">درجة الحرارة:</span>
+                                        <span class="reading-value" id="tempDisplay">--</span>
+                                    </div>
+                                    <div class="reading-item">
+                                        <span class="reading-label">نسبة الأكسجين:</span>
+                                        <span class="reading-value" id="oxygenDisplay">--</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-controls">
+                                <div class="power-button" id="powerButton">
+                                    <i class="fas fa-power-off"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="device-info">
+                        <h3>كيفية استخدام الفا بوكس</h3>
+                        <p>الفا بوكس سهل الاستخدام ويمكن تشغيله باتباع الخطوات التالية:</p>
+                        <ol>
+                            <li><strong>تشغيل الجهاز:</strong> اضغط على زر الطاقة لتشغيل الجهاز.</li>
+                            <li><strong>توصيل المستشعرات:</strong> قم بتوصيل مستشعر درجة الحرارة، مستشعر نسبة الأكسجين، ومستشعر معدل النبض بالمريض.</li>
+                            <li><strong>بدء القياس:</strong> سيبدأ الجهاز تلقائيًا في قياس المؤشرات الحيوية وعرضها على الشاشة.</li>
+                            <li><strong>مراقبة البيانات:</strong> يمكن مراقبة البيانات في الوقت الفعلي من خلال لوحة التحكم على الويب أو تطبيق الهاتف المحمول.</li>
+                            <li><strong>التنبيهات:</strong> سيقوم النظام بإرسال تنبيهات في حالة وجود قيم خارج النطاق الطبيعي.</li>
+                        </ol>
+                        <p>يمكنك تجربة محاكاة الجهاز بالضغط على زر الطاقة في النموذج المعروض.</p>
+                        <a href="pages/demo.html" class="btn btn-primary mt-3">شاهد المزيد من العروض التوضيحية</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الشهادات -->
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">ماذا يقول المستخدمون؟</h2>
+                <p class="lead">آراء المستخدمين والخبراء حول الفا بوكس</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="testimonial-avatar me-3">
+                                    <img src="images/avatar1.png" alt="صورة المستخدم" class="rounded-circle" width="60" height="60">
+                                </div>
+                                <div>
+                                    <h3 class="h6 mb-0">د. أحمد محمد</h3>
+                                    <p class="text-muted small mb-0">طبيب أسرة</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"ساعدني الفا بوكس في متابعة مرضاي عن بعد وتحسين التزامهم بالأدوية. أداة رائعة للرعاية الصحية الحديثة."</p>
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="testimonial-avatar me-3">
+                                    <img src="images/avatar2.png" alt="صورة المستخدم" class="rounded-circle" width="60" height="60">
+                                </div>
+                                <div>
+                                    <h3 class="h6 mb-0">سارة علي</h3>
+                                    <p class="text-muted small mb-0">مريضة</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"كنت أنسى تناول أدويتي باستمرار، لكن مع الفا بوكس أصبحت أكثر التزاماً بجدول الأدوية. التنبيهات والتقارير مفيدة جداً."</p>
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="testimonial-avatar me-3">
+                                    <img src="images/avatar3.png" alt="صورة المستخدم" class="rounded-circle" width="60" height="60">
+                                </div>
+                                <div>
+                                    <h3 class="h6 mb-0">م. خالد عبدالله</h3>
+                                    <p class="text-muted small mb-0">مهندس تقنيات طبية</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"تصميم مبتكر يجمع بين التقنيات الحديثة والاحتياجات الطبية الفعلية. أعتقد أن هذا المشروع سيحدث ثورة في مجال الرعاية الصحية الشخصية."</p>
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الدعوة للتصرف -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-lg-start text-center">
+                    <h2 class="fw-bold mb-3">هل أنت مستعد لتجربة الفا بوكس؟</h2>
+                    <p class="lead mb-0">سجل اهتمامك الآن للحصول على معلومات حصرية ودعوة للتجربة المبكرة</p>
+                </div>
+                <div class="col-lg-4 text-lg-end text-center mt-4 mt-lg-0">
+                    <a href="pages/contact.html" class="btn btn-light btn-lg">سجل اهتمامك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>الفا بوكس</h5>
+                    <p>حل مبتكر لإدارة الأدوية والتنبؤ بالحالة الصحية باستخدام الذكاء الاصطناعي وإنترنت الأشياء.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <a href="en/index.html" class="btn btn-outline-light">English</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">الرئيسية</a></li>
+                        <li><a href="pages/about.html" class="text-white">نبذة عنا</a></li>
+                        <li><a href="pages/features.html" class="text-white">المميزات</a></li>
+                        <li><a href="pages/contact.html" class="text-white">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>الدعم</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="text-white">الدعم الفني</a></li>
+                        <li><a href="#" class="text-white">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-white">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>تواصل معنا</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i> قسم الذكاء الاصطناعي، جامعه حلوان التكنولوجيا الدوليه</li>
+                        <li><i class="bi bi-telephone me-2"></i> +201002769697</li>
+                        <li><i class="bi bi-envelope me-2"></i> shehabhosny889@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 الفا بوكس. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">تم التطوير بواسطة <a href="#" class="text-white">فريق الفا</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

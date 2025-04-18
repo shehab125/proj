@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نبذة عن المشروع | الصندوق الطبي الذكي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- خط عربي من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/Capture.PNG" alt="" height="50" width="100">
+                <span class="text-primary">ِالفا بوكس</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="about.html">نبذة عن المشروع</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">المميزات والتقنيات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="components.html">المكونات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="demo.html">العروض التوضيحية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">الأسئلة الشائعة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../auth/login.html" class="btn btn-outline-primary me-2">تسجيل الدخول</a>
+                    <a href="../auth/register.html" class="btn btn-primary">التسجيل</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- رأس الصفحة -->
+    <header class="page-header py-5 mt-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="fw-bold mb-4">نبذة عن المشروع</h1>
+                    <p class="lead">تعرف على قصة الصندوق الطبي الذكي، المشكلة التي يحلها، وفريق العمل خلفه</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images/about-header.png" alt="نبذة عن الصندوق الطبي الذكي" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم المشكلة والحل -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-4">المشكلة التي نحلها</h2>
+                    <p>يواجه العديد من المرضى، خاصة كبار السن والمصابين بأمراض مزمنة، تحديات كبيرة في إدارة أدويتهم اليومية:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3 text-primary"><i class="bi bi-exclamation-triangle-fill fs-4"></i></div>
+                                <div>
+                                    <h5>نسيان تناول الأدوية</h5>
+                                    <p>يعاني الكثير من المرضى من نسيان تناول أدويتهم في الأوقات المحددة، مما يؤثر سلباً على فعالية العلاج.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3 text-primary"><i class="bi bi-exclamation-triangle-fill fs-4"></i></div>
+                                <div>
+                                    <h5>صعوبة تنظيم الجرعات</h5>
+                                    <p>تعدد الأدوية وتباين مواعيد تناولها يجعل من الصعب على المرضى تنظيم جرعاتهم بشكل صحيح.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3 text-primary"><i class="bi bi-exclamation-triangle-fill fs-4"></i></div>
+                                <div>
+                                    <h5>عدم متابعة المؤشرات الصحية</h5>
+                                    <p>قلة الوعي بأهمية متابعة المؤشرات الصحية وربطها بتناول الأدوية يؤدي إلى تأخر اكتشاف المشكلات الصحية.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">حلنا المبتكر</h2>
+                    <p>الصندوق الطبي الذكي هو نظام متكامل يجمع بين الأجهزة الذكية والبرمجيات المتطورة لحل هذه المشكلات:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3 text-success"><i class="bi bi-check-circle-fill fs-4"></i></div>
+                                <div>
+                                    <h5>نظام تذكير ذكي</h5>
+                                    <p>يقدم تنبيهات صوتية وضوئية في الأوقات المحددة لتناول الأدوية، مع إمكانية إرسال إشعارات للهاتف المحمول.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3 text-success"><i class="bi bi-check-circle-fill fs-4"></i></div>
+                                <div>
+                                    <h5>تنظيم آلي للجرعات</h5>
+                                    <p>يقوم النظام بتنظيم الأدوية وتجهيزها في حجرات منفصلة حسب مواعيد تناولها، مع التحقق من صحة الجرعات.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3 text-success"><i class="bi bi-check-circle-fill fs-4"></i></div>
+                                <div>
+                                    <h5>متابعة المؤشرات الصحية</h5>
+                                    <p>يتكامل النظام مع أجهزة قياس المؤشرات الحيوية لتتبع الحالة الصحية وتحليلها باستخدام الذكاء الاصطناعي.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم رؤيتنا ومهمتنا -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-circle bg-primary text-white mb-3">
+                                    <i class="bi bi-eye-fill fs-3"></i>
+                                </div>
+                                <h3 class="fw-bold">رؤيتنا</h3>
+                            </div>
+                            <p class="lead text-center mb-0">أن نكون الرائدين عالمياً في مجال الرعاية الصحية الذكية، ونساهم في تحسين جودة حياة المرضى من خلال التكنولوجيا المبتكرة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-circle bg-primary text-white mb-3">
+                                    <i class="bi bi-bullseye fs-3"></i>
+                                </div>
+                                <h3 class="fw-bold">مهمتنا</h3>
+                            </div>
+                            <p class="lead text-center mb-0">تطوير حلول تكنولوجية مبتكرة تساعد المرضى على إدارة أدويتهم ومتابعة حالتهم الصحية بشكل آمن وفعال، مما يحسن الالتزام بالعلاج ويقلل من المضاعفات الصحية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم قصة المشروع -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">قصة المشروع</h2>
+                <p class="lead">كيف بدأت فكرة الصندوق الطبي الذكي وتطورت</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="timeline">
+                        <div class="timeline-item mb-5">
+                            <div class="row">
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <div class="timeline-content p-4 bg-light rounded shadow-sm">
+                                        <h3 class="h5 fw-bold">بداية الفكرة</h3>
+                                        <p class="mb-0">بدأت الفكرة عندما لاحظ أحد أعضاء فريقنا معاناة جدته في تنظيم أدويتها اليومية وتذكر مواعيد تناولها. هذا دفعنا للتفكير في حل تكنولوجي يساعد كبار السن والمرضى على إدارة أدويتهم بشكل أفضل.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="timeline-date text-md-start text-center">
+                                        <span class="badge bg-primary p-2">2024</span>
+                                        <h4 class="h6 mt-2">اكتوبر</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item mb-5">
+                            <div class="row">
+                                <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+                                    <div class="timeline-content p-4 bg-light rounded shadow-sm">
+                                        <h3 class="h5 fw-bold">البحث والتطوير</h3>
+                                        <p class="mb-0">أجرينا دراسات مكثفة حول احتياجات المرضى وتحديات إدارة الأدوية، وبدأنا في تطوير النموذج الأولي للصندوق الطبي الذكي بالتعاون مع خبراء في مجال الرعاية الصحية والتكنولوجيا.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="timeline-date text-md-end text-center">
+                                        <span class="badge bg-primary p-2">2024</span>
+                                        <h4 class="h6 mt-2">ديسمبر</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item mb-5">
+                            <div class="row">
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <div class="timeline-content p-4 bg-light rounded shadow-sm">
+                                        <h3 class="h5 fw-bold">النموذج الأولي</h3>
+                                        <p class="mb-0">أطلقنا النموذج الأولي للصندوق الطبي الذكي وبدأنا اختباره مع مجموعة صغيرة من المستخدمين. حصلنا على تعليقات قيمة ساعدتنا في تحسين المنتج وإضافة ميزات جديدة.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="timeline-date text-md-start text-center">
+                                        <span class="badge bg-primary p-2">2025</span>
+                                        <h4 class="h6 mt-2">يناير</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item mb-5">
+                            <div class="row">
+                                <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+                                    <div class="timeline-content p-4 bg-light rounded shadow-sm">
+                                        <h3 class="h5 fw-bold">تطوير الذكاء الاصطناعي</h3>
+                                        <p class="mb-0">أضفنا خوارزميات الذكاء الاصطناعي لتحليل البيانات الصحية والتنبؤ بالمخاطر المحتملة، مما يساعد المرضى والأطباء على اتخاذ قرارات أفضل بشأن الرعاية الصحية.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="timeline-date text-md-end text-center">
+                                        <span class="badge bg-primary p-2">2025</span>
+                                        <h4 class="h6 mt-2">ابريل</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <div class="timeline-content p-4 bg-light rounded shadow-sm">
+                                        <h3 class="h5 fw-bold">الإطلاق الرسمي</h3>
+                                        <p class="mb-0">نحن الآن في المراحل النهائية من تطوير المنتج واختباره، ونستعد للإطلاق الرسمي للصندوق الطبي الذكي في الأسواق قريباً.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="timeline-date text-md-start text-center">
+                                        <span class="badge bg-primary p-2">2025</span>
+                                        <h4 class="h6 mt-2">يونيو</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم فريق العمل -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">فريق العمل</h2>
+                <p class="lead">تعرف على الفريق المبدع خلف الصندوق الطبي الذكي</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-5 col-md-6">
+                    <div class="card team-card h-100 border-0 shadow-sm">
+                        <img src="../images/1722279303233.jpeg" class="card-img-top" alt="صورة عضو الفريق">
+                        <div class="card-body text-center">
+                            <h3>شهاب حسني محمد</h3>
+                            <p class="team-member-position">قائد الفريق</p>
+                            <p class="team-member-position">و مسؤول السوفت وير</p>
+                            <p class="team-member-email"><i class="fas fa-envelope"></i> shehabhosny889@gmail.com</p>
+                            <p class="team-member-phone"><i class="fas fa-phone"></i> +201002769697</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/shehab-hosny-mohamed-836124242" class="text-primary me-2"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://github.com/shehab125" class="text-primary me-2"><i class="bi bi-github"></i></a>
+                                <a href="mailto:shehabhosny889@gmail.com" class="text-primary"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="card team-card h-100 border-0 shadow-sm">
+                        <img src="../images/1720748704436.jpeg" class="card-img-top" alt="صورة عضو الفريق">
+                        <div class="card-body text-center">
+                            <h3>اسماء ابراهيم</h3>
+                            <p class="team-member-position">مسؤول الهاردوير</p>
+                            <p class="team-member-email"><i class="fas fa-envelope"></i> asmaa@smartmedicalbox.com</p>
+                            <p class="team-member-phone"><i class="fas fa-phone"></i> +123 456 7891</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/asmaa-ibrahimm/" class="text-primary me-2"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary me-2"><i class="bi bi-github"></i></a>
+                                <a href="#" class="text-primary"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الشركاء -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">شركاؤنا</h2>
+                <p class="lead">نفخر بالتعاون مع مؤسسات رائدة في مجال الرعاية الصحية والتكنولوجيا</p>
+            </div>
+            <div class="row g-4 align-items-center justify-content-center">
+                <div class="col-md-2 col-4">
+                    <div class="text-center">
+                        <img src="../images/partner1.png" alt="شعار الشريك" class="img-fluid grayscale">
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="text-center">
+                        <img src="../images/partner2.png" alt="شعار الشريك" class="img-fluid grayscale">
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="text-center">
+                        <img src="../images/partner3.png" alt="شعار الشريك" class="img-fluid grayscale">
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="text-center">
+                        <img src="../images/partner4.png" alt="شعار الشريك" class="img-fluid grayscale">
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="text-center">
+                        <img src="../images/partner5.png" alt="شعار الشريك" class="img-fluid grayscale">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الدعوة للتصرف -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-lg-start text-center">
+                    <h2 class="fw-bold mb-3">هل تريد معرفة المزيد عن الصندوق الطبي الذكي؟</h2>
+                    <p class="lead mb-0">تواصل معنا اليوم للحصول على معلومات إضافية أو لترتيب عرض توضيحي</p>
+                </div>
+                <div class="col-lg-4 text-lg-end text-center mt-4 mt-lg-0">
+                    <a href="contact.html" class="btn btn-light btn-lg">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>الفا بوكس</h5>
+                    <p>حل مبتكر لإدارة الأدوية والتنبؤ بالحالة الصحية باستخدام الذكاء الاصطناعي وإنترنت الأشياء.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-white">نبذة عنا</a></li>
+                        <li><a href="features.html" class="text-white">المميزات</a></li>
+                        <li><a href="contact.html" class="text-white">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>الدعم</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html" class="text-white">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="text-white">الدعم الفني</a></li>
+                        <li><a href="#" class="text-white">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-white">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>تواصل معنا</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i> قسم الذكاء الاصطناعي، جامعه حلوان التكنولوجيا الدوليه</li>
+                        <li><i class="bi bi-telephone me-2"></i> +201002769697</li>
+                        <li><i class="bi bi-envelope me-2"></i> shehabhosny889@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 الفا بوكس. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">تم التطوير بواسطة <a href="#" class="text-white">فريق الفا</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

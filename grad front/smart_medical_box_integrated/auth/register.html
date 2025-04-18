@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد | الفا بوكس</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center py-5">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <img src="../images/Capture.PNG" alt="الفا بوكس" height="60" class="mb-3">
+                            <h2 class="text-primary">إنشاء حساب جديد</h2>
+                            <p class="text-muted">أدخل بياناتك لإنشاء حساب في نظام الفا بوكس</p>
+            </div>
+            
+                        <form id="registerForm" class="needs-validation" novalidate>
+                            <div class="alert alert-danger d-none" id="registerError"></div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">نوع الحساب</label>
+                <div class="d-flex gap-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="userType" id="doctorType" value="doctor" required>
+                                        <label class="form-check-label" for="doctorType">طبيب</label>
+                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="userType" id="patientType" value="patient" required>
+                                        <label class="form-check-label" for="patientType">مريض</label>
+                    </div>
+                </div>
+                                <div class="invalid-feedback">
+                                    يرجى اختيار نوع الحساب
+                                </div>
+            </div>
+            
+                <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">الاسم الأول</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال الاسم الأول
+                        </div>
+                    </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">الاسم الأخير</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال الاسم الأخير
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                                <label for="email" class="form-label">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback">
+                                    يرجى إدخال بريد إلكتروني صحيح
+                                </div>
+                </div>
+                
+                <div class="mb-3">
+                                <label for="phone" class="form-label">رقم الهاتف</label>
+                                <input type="tel" class="form-control" id="phone" required pattern="[0-9]{11}">
+                                <div class="invalid-feedback">
+                                    يرجى إدخال رقم هاتف صحيح (11 رقم)
+                                </div>
+                </div>
+                
+                <div class="mb-3">
+                                <label for="password" class="form-label">كلمة المرور</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="password" required minlength="8">
+                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                </div>
+                                <div class="invalid-feedback">
+                                    يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل
+                        </div>
+                    </div>
+                            
+                        <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">تأكيد كلمة المرور</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                    <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                        </div>
+                                <div class="invalid-feedback">
+                                    كلمتا المرور غير متطابقتين
+                    </div>
+                </div>
+                
+                            <div id="doctorFields" class="d-none">
+                        <div class="mb-3">
+                                    <label for="specialization" class="form-label">التخصص</label>
+                                    <input type="text" class="form-control" id="specialization">
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال التخصص
+                        </div>
+                    </div>
+                                
+                        <div class="mb-3">
+                                    <label for="licenseNumber" class="form-label">رقم الترخيص</label>
+                                    <input type="text" class="form-control" id="licenseNumber">
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال رقم الترخيص
+                        </div>
+                    </div>
+                </div>
+                
+                            <div id="patientFields" class="d-none">
+                <div class="mb-3">
+                                    <label for="dateOfBirth" class="form-label">تاريخ الميلاد</label>
+                                    <input type="date" class="form-control" id="dateOfBirth">
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال تاريخ الميلاد
+                                    </div>
+                </div>
+                
+                        <div class="mb-3">
+                                    <label for="gender" class="form-label">الجنس</label>
+                                    <select class="form-select" id="gender">
+                                        <option value="">اختر الجنس</option>
+                                        <option value="male">ذكر</option>
+                                        <option value="female">أنثى</option>
+                            </select>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار الجنس
+                        </div>
+                    </div>
+                </div>
+                
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    أوافق على <a href="#" class="text-decoration-none">الشروط والأحكام</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    يجب الموافقة على الشروط والأحكام
+                                </div>
+                </div>
+                
+                            <button type="submit" class="btn btn-primary w-100" id="registerButton">
+                                <span class="spinner-border spinner-border-sm d-none" id="registerSpinner"></span>
+                                إنشاء حساب
+                            </button>
+                        </form>
+                        
+                        <hr class="my-4">
+                        
+                        <div class="text-center">
+                            <p class="mb-0">لديك حساب بالفعل؟ <a href="login.html" class="text-decoration-none">تسجيل الدخول</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerForm = document.getElementById('registerForm');
+            const registerButton = document.getElementById('registerButton');
+            const registerSpinner = document.getElementById('registerSpinner');
+            const registerError = document.getElementById('registerError');
+            const doctorFields = document.getElementById('doctorFields');
+            const patientFields = document.getElementById('patientFields');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            
+            // التحقق من وجود توكن صالح
+            const token = localStorage.getItem(API_CONFIG.STORAGE_KEYS.TOKEN);
+            if (token) {
+                window.location.href = '../index.html';
+            }
+            
+            // تبديل حقول نوع المستخدم
+            document.querySelectorAll('input[name="userType"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'doctor') {
+                        doctorFields.classList.remove('d-none');
+                        patientFields.classList.add('d-none');
+                        document.querySelectorAll('#doctorFields input').forEach(input => input.required = true);
+                        document.querySelectorAll('#patientFields input, #patientFields select').forEach(input => input.required = false);
+                    } else {
+                        doctorFields.classList.add('d-none');
+                        patientFields.classList.remove('d-none');
+                        document.querySelectorAll('#doctorFields input').forEach(input => input.required = false);
+                        document.querySelectorAll('#patientFields input, #patientFields select').forEach(input => input.required = true);
+                    }
+                });
+            });
+            
+            // تبديل عرض/إخفاء كلمة المرور
+            document.getElementById('togglePassword').addEventListener('click', function() {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('bi-eye');
+                this.querySelector('i').classList.toggle('bi-eye-slash');
+            });
+            
+            document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+                const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPassword.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('bi-eye');
+                this.querySelector('i').classList.toggle('bi-eye-slash');
+            });
+            
+            // التحقق من تطابق كلمتي المرور
+            confirmPassword.addEventListener('input', function() {
+                if (this.value !== password.value) {
+                    this.setCustomValidity('كلمتا المرور غير متطابقتين');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+            
+            // معالجة التسجيل
+            registerForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                if (!registerForm.checkValidity()) {
+                    e.stopPropagation();
+                    registerForm.classList.add('was-validated');
+                    return;
+                }
+                
+                const formData = {
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value,
+                    first_name: document.getElementById('firstName').value,
+                    last_name: document.getElementById('lastName').value,
+                    phone: document.getElementById('phone').value,
+                    user_type: document.querySelector('input[name="userType"]:checked').value
+                };
+                
+                // إضافة الحقول الإضافية حسب نوع المستخدم
+                if (formData.user_type === 'doctor') {
+                    formData.specialty = document.getElementById('specialization').value;
+                    formData.license_number = document.getElementById('licenseNumber').value;
+                } else {
+                    formData.date_of_birth = document.getElementById('dateOfBirth').value;
+                    formData.gender = document.getElementById('gender').value;
+                }
+                
+                try {
+                    registerButton.disabled = true;
+                    registerSpinner.classList.remove('d-none');
+                    registerError.classList.add('d-none');
+                    
+                    const response = await apiService.register(formData);
+                    
+                    if (response.access_token) {
+                        window.location.href = '../dashboard/index.html';
+                    } else {
+                        throw new Error('فشل إنشاء الحساب');
+                    }
+                } catch (error) {
+                    registerError.textContent = error.message;
+                    registerError.classList.remove('d-none');
+                } finally {
+                    registerButton.disabled = false;
+                    registerSpinner.classList.add('d-none');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

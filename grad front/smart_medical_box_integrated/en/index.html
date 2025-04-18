@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Box | Smart Medical Box</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="../images/Capture.PNG" alt="" height="50" width="100">
+                <span class="text-primary">Alpha Box</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/components.html">Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/demo.html">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../index.html" class="btn btn-outline-secondary me-2">عربي</a>
+                    <a href="auth/login.html" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="auth/register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold mb-4">Alpha Box</h1>
+                    <p class="lead mb-4">An innovative solution for patient management and health prediction using AI and IoT</p>
+                    <p class="mb-4">An integrated system for monitoring patients' vital signs using artificial intelligence and internet technologies</p>
+                    <div class="d-flex gap-3">
+                        <a href="pages/features.html" class="btn btn-primary btn-lg">Explore Features</a>
+                        <a href="pages/demo.html" class="btn btn-outline-primary btn-lg">Watch Demo</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="../images/hero-image.png" alt="Alpha Box" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Alpha Box Features</h2>
+                <p>Discover the key features that make Alpha Box the ideal solution for vital signs monitoring</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="feature-title">Vital Signs Monitoring</h3>
+                        <p>Accurate and continuous measurement of temperature, blood oxygen levels, and heart rate.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.2s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="feature-title">Artificial Intelligence</h3>
+                        <p>Using AI and machine learning algorithms to detect abnormal values and predict critical conditions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card animate-slide-up" style="animation-delay: 0.4s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3 class="feature-title">Alert System</h3>
+                        <p>Instant notifications to medical staff when values are outside normal range, enabling rapid intervention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="interactive-demo-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Interactive Vital Signs Demo</h2>
+                <p>Try the dashboard simulation and see how the alert system works</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="interactive-demo-container">
+                        <div class="vital-signs-chart-container">
+                            <canvas id="vitalSignsChart"></canvas>
+                        </div>
+                        <div class="demo-controls" id="demoControls">
+                            <h3>Control Vital Signs</h3>
+                            <p>Use the sliders below to change vital sign values and see how the system responds:</p>
+                            
+                            <div class="vital-sign-control">
+                                <label for="heartRateSlider">Heart Rate: <span id="heartRateValue">75</span> BPM</label>
+                                <input type="range" class="form-range" id="heartRateSlider" min="40" max="140" value="75">
+                                <div class="range-info d-flex justify-content-between">
+                                    <small>40</small>
+                                    <small class="text-success">60-100 (Normal)</small>
+                                    <small>140</small>
+                                </div>
+                            </div>
+                            
+                            <div class="vital-sign-control">
+                                <label for="temperatureSlider">Temperature: <span id="temperatureValue">37.0</span> °C</label>
+                                <input type="range" class="form-range" id="temperatureSlider" min="35.0" max="40.0" step="0.1" value="37.0">
+                                <div class="range-info d-flex justify-content-between">
+                                    <small>35.0</small>
+                                    <small class="text-success">36.5-37.5 (Normal)</small>
+                                    <small>40.0</small>
+                                </div>
+                            </div>
+                            
+                            <div class="vital-sign-control">
+                                <label for="oxygenSlider">Oxygen Level: <span id="oxygenValue">98</span> %</label>
+                                <input type="range" class="form-range" id="oxygenSlider" min="80" max="100" value="98">
+                                <div class="range-info d-flex justify-content-between">
+                                    <small>80</small>
+                                    <small class="text-success">95-100 (Normal)</small>
+                                    <small>100</small>
+                                </div>
+                            </div>
+                            
+                            <div class="alerts-container mt-4" id="alertsContainer">
+                                <!-- Alerts will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Alpha Box</h5>
+                    <p>An innovative solution for medication management and health prediction using AI and IoT.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="pages/about.html" class="text-white">About</a></li>
+                        <li><a href="pages/features.html" class="text-white">Features</a></li>
+                        <li><a href="pages/contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">FAQ</a></li>
+                        <li><a href="#" class="text-white">Technical Support</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i> AI Department, Helwan International Technology University</li>
+                        <li><i class="bi bi-telephone me-2"></i> +201002769697</li>
+                        <li><i class="bi bi-envelope me-2"></i> shehabhosny889@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Alpha Box. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Developed by <a href="#" class="text-white">Alpha Team</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

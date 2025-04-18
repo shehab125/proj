@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة | الفا بوكس</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- خط عربي من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/Capture.PNG" alt="" height="50" width="100">
+                <span class="text-primary">ِالفا بوكس</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">نبذة عن المشروع</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">المميزات والتقنيات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="components.html">المكونات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="demo.html">العروض التوضيحية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="faq.html">الأسئلة الشائعة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../auth/login.html" class="btn btn-outline-primary me-2">تسجيل الدخول</a>
+                    <a href="../auth/register.html" class="btn btn-primary">التسجيل</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- رأس الصفحة -->
+    <header class="page-header py-5 mt-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="fw-bold mb-4">الأسئلة الشائعة</h1>
+                    <p class="lead">إجابات على الأسئلة الأكثر شيوعاً حول الفا بوكس</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images/faq-header.png" alt="الأسئلة الشائعة" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- مجموعة 1: أسئلة عامة -->
+                        <div class="mb-4">
+                            <h2 class="fw-bold h4 mb-3">أسئلة عامة</h2>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                        ما هو الفا بوكس؟
+                                    </button>
+                                </h3>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>الفا بوكس هو جهاز مبتكر يجمع بين التكنولوجيا المتقدمة والرعاية الصحية لمساعدة المرضى على إدارة أدويتهم ومتابعة حالتهم الصحية بشكل أفضل. يقوم الجهاز بتنظيم الأدوية وتذكير المستخدم بمواعيد تناولها، مع تتبع المؤشرات الحيوية وتحليل البيانات الصحية باستخدام الذكاء الاصطناعي لتقديم توصيات مخصصة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                        لمن يناسب الفا بوكس؟
+                                    </button>
+                                </h3>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>الفا بوكس مناسب لمجموعة واسعة من المستخدمين، بما في ذلك:</p>
+                                        <ul>
+                                            <li>كبار السن الذين يتناولون أدوية متعددة</li>
+                                            <li>المرضى المصابين بأمراض مزمنة مثل السكري وارتفاع ضغط الدم</li>
+                                            <li>الأشخاص الذين يواجهون صعوبة في تذكر مواعيد تناول أدويتهم</li>
+                                            <li>مقدمي الرعاية الذين يساعدون أفراد العائلة في إدارة أدويتهم</li>
+                                            <li>أي شخص يرغب في متابعة حالته الصحية بشكل أفضل</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                        ما هي المميزات الرئيسية للفا بوكس؟
+                                    </button>
+                                </h3>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>المميزات الرئيسية للفا بوكس تشمل:</p>
+                                        <ul>
+                                            <li>نظام تذكير ذكي للأدوية مع تنبيهات صوتية وضوئية</li>
+                                            <li>تنظيم آلي للأدوية في حجرات منفصلة حسب مواعيد تناولها</li>
+                                            <li>متابعة المؤشرات الحيوية مثل ضغط الدم ومستوى السكر</li>
+                                            <li>التحقق من التفاعلات الدوائية المحتملة</li>
+                                            <li>تحليل البيانات الصحية باستخدام الذكاء الاصطناعي</li>
+                                            <li>واجهة مستخدم سهلة الاستخدام باللغتين العربية والإنجليزية</li>
+                                            <li>تطبيق للهاتف المحمول للتحكم عن بعد ومتابعة الحالة الصحية</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- مجموعة 2: أسئلة تقنية -->
+                        <div class="mb-4">
+                            <h2 class="fw-bold h4 mb-3">أسئلة تقنية</h2>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                        كيف يعمل الفا بوكس؟
+                                    </button>
+                                </h3>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>يعمل الفا بوكس من خلال مجموعة متكاملة من المكونات المادية والبرمجية:</p>
+                                        <ol>
+                                            <li>يقوم المستخدم بإدخال معلومات الأدوية والجرعات من خلال شاشة العرض التفاعلية أو تطبيق الهاتف المحمول.</li>
+                                            <li>يقوم نظام إدارة الأدوية بجدولة مواعيد تناول الأدوية مع مراعاة التفاعلات الدوائية المحتملة.</li>
+                                            <li>يقوم نظام التوزيع الآلي بتنظيم الأدوية في حجرات منفصلة حسب مواعيد تناولها.</li>
+                                            <li>في الأوقات المحددة، يقوم النظام بتنبيه المستخدم من خلال إشارات صوتية وضوئية وإشعارات على الهاتف المحمول.</li>
+                                            <li>يقوم النظام بتسجيل الالتزام بتناول الأدوية وتحليل البيانات الصحية لتقديم توصيات مخصصة.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                        هل يمكن للفا بوكس التعامل مع جميع أنواع الأدوية؟
+                                    </button>
+                                </h3>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>نعم، الفا بوكس مصمم للتعامل مع معظم أنواع الأدوية الشائعة، بما في ذلك:</p>
+                                        <ul>
+                                            <li>الأقراص والكبسولات بمختلف الأحجام</li>
+                                            <li>الأدوية السائلة (مع ملحقات خاصة)</li>
+                                            <li>أدوية الاستنشاق (مع تذكيرات خاصة)</li>
+                                        </ul>
+                                        <p>ومع ذلك، هناك بعض القيود على الأدوية التي تتطلب ظروف تخزين خاصة مثل التبريد، أو الأدوية التي تتطلب تحضيراً خاصاً قبل الاستخدام. في هذه الحالات، يمكن للفا بوكس تقديم تذكيرات فقط دون تخزين الأدوية نفسها.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                        كيف يتم تأمين البيانات الصحية في الفا بوكس؟
+                                    </button>
+                                </h3>
+                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>نحن نأخذ خصوصية وأمان البيانات الصحية بجدية تامة. يتم تأمين البيانات في الفا بوكس من خلال:</p>
+                                        <ul>
+                                            <li>تشفير البيانات أثناء التخزين والنقل باستخدام معايير التشفير المتقدمة</li>
+                                            <li>التحقق من الهوية متعدد العوامل للوصول إلى البيانات الحساسة</li>
+                                            <li>تخزين البيانات في خوادم آمنة تتوافق مع معايير الأمان العالمية</li>
+                                            <li>سياسات صارمة للوصول إلى البيانات ومشاركتها</li>
+                                            <li>تحديثات أمنية دورية لحماية النظام من التهديدات الجديدة</li>
+                                        </ul>
+                                        <p>بالإضافة إلى ذلك، يمكن للمستخدم التحكم الكامل في مشاركة بياناته الصحية مع الأطباء أو مقدمي الرعاية.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- مجموعة 3: أسئلة الاستخدام -->
+                        <div class="mb-4">
+                            <h2 class="fw-bold h4 mb-3">أسئلة الاستخدام</h2>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                                        كيف يمكنني إعداد الفا بوكس لأول مرة؟
+                                    </button>
+                                </h3>
+                                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>إعداد الفا بوكس لأول مرة سهل ويتم من خلال الخطوات التالية:</p>
+                                        <ol>
+                                            <li>قم بتوصيل الفا بوكس بمصدر الطاقة وتشغيله.</li>
+                                            <li>اتبع تعليمات الإعداد الأولي على شاشة العرض التفاعلية.</li>
+                                            <li>قم بتنزيل تطبيق الفا بوكس على هاتفك المحمول من متجر التطبيقات.</li>
+                                            <li>أنشئ حساباً جديداً أو قم بتسجيل الدخول إذا كان لديك حساب بالفعل.</li>
+                                            <li>قم بتوصيل هاتفك المحمول بالفا بوكس عبر Bluetooth أو Wi-Fi.</li>
+                                            <li>أدخل معلومات الأدوية الخاصة بك، بما في ذلك الاسم والجرعة ومواعيد التناول.</li>
+                                            <li>قم بإعداد أجهزة قياس المؤشرات الحيوية المتكاملة (اختياري).</li>
+                                            <li>خصص إعدادات التنبيهات والإشعارات حسب تفضيلاتك.</li>
+                                        </ol>
+                                        <p>يأتي الفا بوكس مع دليل مستخدم مفصل ودعم فني متاح للمساعدة في عملية الإعداد.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                                        كيف يمكنني مشاركة بياناتي الصحية مع طبيبي؟
+                                    </button>
+                                </h3>
+                                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>يوفر الفا بوكس عدة طرق لمشاركة بياناتك الصحية مع طبيبك:</p>
+                                        <ol>
+                                            <li><strong>مشاركة مباشرة:</strong> يمكنك دعوة طبيبك للوصول إلى لوحة تحكم خاصة تعرض بياناتك الصحية في الوقت الفعلي.</li>
+                                            <li><strong>تقارير دورية:</strong> يمكنك إعداد تقارير دورية (يومية، أسبوعية، شهرية) ليتم إرسالها تلقائياً إلى طبيبك عبر البريد الإلكتروني.</li>
+                                            <li><strong>تصدير البيانات:</strong> يمكنك تصدير بياناتك الصحية بتنسيقات مختلفة (PDF، CSV، Excel) ومشاركتها مع طبيبك.</li>
+                                            <li><strong>مشاركة لحظية:</strong> في حالات الطوارئ أو المواعيد الطبية، يمكنك مشاركة بياناتك الصحية مباشرة من تطبيق الهاتف المحمول.</li>
+                                        </ol>
+                                        <p>جميع طرق المشاركة تتطلب موافقتك الصريحة، ويمكنك إلغاء الوصول في أي وقت.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">
+                                        ماذا يحدث إذا نسيت تناول الدواء؟
+                                    </button>
+                                </h3>
+                                <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>إذا نسيت تناول الدواء في الوقت المحدد، يقوم الفا بوكس بما يلي:</p>
+                                        <ol>
+                                            <li>يستمر في إصدار تنبيهات صوتية وضوئية لفترة محددة (يمكن تخصيصها في الإعدادات).</li>
+                                            <li>يرسل إشعارات متكررة إلى هاتفك المحمول.</li>
+                                            <li>إذا استمر عدم الاستجابة، يمكن للنظام إرسال تنبيهات إلى جهات اتصال الطوارئ المحددة مسبقاً (مثل أفراد العائلة أو مقدمي الرعاية).</li>
+                                            <li>يسجل الجرعة الفائتة في سجل الالتزام بالأدوية.</li>
+                                            <li>يقدم إرشادات حول كيفية التعامل مع الجرعة الفائتة بناءً على نوع الدواء وتعليمات الطبيب.</li>
+                                        </ol>
+                                        <p>يمكن تخصيص استجابة النظام للجرعات الفائتة حسب أهمية كل دواء وتعليمات الطبيب.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- مجموعة 4: أسئلة الشراء والدعم -->
+                        <div class="mb-4">
+                            <h2 class="fw-bold h4 mb-3">أسئلة الشراء والدعم</h2>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">
+                                        كيف يمكنني شراء الفا بوكس؟
+                                    </button>
+                                </h3>
+                                <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>يمكنك شراء الفا بوكس من خلال عدة قنوات:</p>
+                                        <ul>
+                                            <li><strong>الموقع الرسمي:</strong> يمكنك طلب الفا بوكس مباشرة من موقعنا الإلكتروني مع خيارات الدفع والشحن المختلفة.</li>
+                                            <li><strong>المتاجر المعتمدة:</strong> يتوفر الفا بوكس في شبكة من المتاجر المعتمدة في مختلف المدن.</li>
+                                            <li><strong>الصيدليات الكبرى:</strong> تم توفير الفا بوكس في بعض سلاسل الصيدليات الكبرى.</li>
+                                            <li><strong>المستشفيات ومراكز الرعاية الصحية:</strong> بعض المستشفيات ومراكز الرعاية الصحية توفر الفا بوكس كجزء من برامج الرعاية المنزلية.</li>
+                                        </ul>
+                                        <p>للحصول على معلومات حول التوفر والأسعار في منطقتك، يرجى <a href="contact.html">التواصل معنا</a> أو زيارة صفحة المنتجات على موقعنا.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11" aria-expanded="false" aria-controls="faq11">
+                                        هل هناك ضمان للفا بوكس؟
+                                    </button>
+                                </h3>
+                                <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>نعم، يأتي الفا بوكس مع ضمان شامل لمدة عامين يغطي:</p>
+                                        <ul>
+                                            <li>جميع العيوب المصنعية</li>
+                                            <li>مشاكل الأجهزة والمكونات الإلكترونية</li>
+                                            <li>أعطال البرمجيات والنظام</li>
+                                        </ul>
+                                        <p>بالإضافة إلى ذلك، نقدم خطط ضمان ممتدة اختيارية تصل إلى 5 سنوات مع مزايا إضافية مثل:</p>
+                                        <ul>
+                                            <li>استبدال فوري للجهاز في حالة الأعطال الكبيرة</li>
+                                            <li>صيانة دورية مجانية</li>
+                                            <li>ترقيات مجانية للبرمجيات والمكونات</li>
+                                        </ul>
+                                        <p>للحصول على معلومات مفصلة حول الضمان وخطط الخدمة، يرجى مراجعة وثائق المنتج أو <a href="contact.html">التواصل مع فريق الدعم</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 shadow-sm mb-3">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12" aria-expanded="false" aria-controls="faq12">
+                                        كيف يمكنني الحصول على الدعم الفني؟
+                                    </button>
+                                </h3>
+                                <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>نحن نقدم دعماً فنياً شاملاً من خلال عدة قنوات:</p>
+                                        <ul>
+                                            <li><strong>مركز الدعم عبر الهاتف:</strong> متاح على مدار الساعة طوال أيام الأسبوع على الرقم: +966 12 345 6789</li>
+                                            <li><strong>الدعم عبر البريد الإلكتروني:</strong> أرسل استفساراتك إلى support@smartmedicalbox.com</li>
+                                            <li><strong>الدردشة المباشرة:</strong> متاحة على موقعنا الإلكتروني وتطبيق الهاتف المحمول</li>
+                                            <li><strong>مركز المساعدة عبر الإنترنت:</strong> يحتوي على أدلة مفصلة ومقاطع فيديو توضيحية وحلول للمشكلات الشائعة</li>
+                                            <li><strong>الدعم المنزلي:</strong> في بعض المناطق، نقدم خدمة الدعم المنزلي للمساعدة في الإعداد أو حل المشكلات المعقدة</li>
+                                        </ul>
+                                        <p>جميع مستخدمي الفا بوكس يحصلون على دعم فني مجاني لمدة عامين، مع إمكانية تمديد فترة الدعم من خلال خطط الخدمة المختلفة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- قسم لم تجد إجابة لسؤالك؟ -->
+                    <div class="mt-5 p-4 bg-light rounded shadow-sm text-center">
+                        <h3 class="h5 fw-bold mb-3">لم تجد إجابة لسؤالك؟</h3>
+                        <p>لا تتردد في التواصل معنا مباشرة للحصول على المساعدة</p>
+                        <a href="contact.html" class="btn btn-primary">تواصل معنا</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الدعوة للتصرف -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-lg-start text-center">
+                    <h2 class="fw-bold mb-3">هل أنت مستعد لتجربة الفا بوكس؟</h2>
+                    <p class="lead mb-0">سجل اهتمامك الآن للحصول على معلومات حصرية ودعوة للتجربة المبكرة</p>
+                </div>
+                <div class="col-lg-4 text-lg-end text-center mt-4 mt-lg-0">
+                    <a href="contact.html" class="btn btn-light btn-lg">سجل اهتمامك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>الفا بوكس</h5>
+                    <p>حل مبتكر لإدارة الأدوية والتنبؤ بالحالة الصحية باستخدام الذكاء الاصطناعي وإنترنت الأشياء.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-white">نبذة عنا</a></li>
+                        <li><a href="features.html" class="text-white">المميزات</a></li>
+                        <li><a href="contact.html" class="text-white">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>الدعم</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html" class="text-white">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="text-white">الدعم الفني</a></li>
+                        <li><a href="#" class="text-white">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-white">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>تواصل معنا</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i> قسم الذكاء الاصطناعي، جامعه حلوان التكنولوجيا الدوليه</li>
+                        <li><i class="bi bi-telephone me-2"></i> +201002769697</li>
+                        <li><i class="bi bi-envelope me-2"></i> shehabhosny889@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 الفا بوكس. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">تم التطوير بواسطة <a href="#" class="text-white">فريق الفا</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

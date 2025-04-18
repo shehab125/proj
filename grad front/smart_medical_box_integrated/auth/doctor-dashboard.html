@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الطبيب - الصندوق الطبي الذكي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 250px;
+            background-color: #343a40;
+            padding-top: 20px;
+            color: white;
+            z-index: 100;
+        }
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            margin-bottom: 5px;
+        }
+        .sidebar .nav-link:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .sidebar .nav-link.active {
+            color: white;
+            background-color: #0d6efd;
+        }
+        .sidebar .nav-link i {
+            margin-left: 10px;
+        }
+        .main-content {
+            margin-right: 250px;
+            padding: 20px;
+        }
+        .patient-card {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .patient-card:hover {
+            transform: translateY(-5px);
+        }
+        .vital-sign {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .vital-sign i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .vital-sign .value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .vital-sign .label {
+            font-size: 14px;
+            color: #6c757d;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .alert-container {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .main-content {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط الجانبي -->
+    <div class="sidebar">
+        <div class="text-center mb-4">
+            <h4>الصندوق الطبي الذكي</h4>
+            <p>د. أحمد محمد</p>
+            <a href="../index.html" class="btn btn-sm btn-outline-light mt-2">العودة إلى الصفحة الرئيسية</a>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#dashboard"><i class="bi bi-speedometer2"></i> لوحة التحكم</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#patients"><i class="bi bi-people"></i> المرضى</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#predictions"><i class="bi bi-graph-up"></i> التنبؤات</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#medications"><i class="bi bi-capsule"></i> الأدوية</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#settings"><i class="bi bi-gear"></i> الإعدادات</a>
+            </li>
+            <li class="nav-item mt-5">
+                <a class="nav-link text-danger" href="../index.html"><i class="bi bi-box-arrow-right"></i> تسجيل الخروج</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <!-- رأس الصفحة -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>لوحة تحكم الطبيب</h2>
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="notificationsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-bell"></i>
+                            <span class="badge bg-danger">3</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationsDropdown">
+                            <li><a class="dropdown-item" href="#">تنبيه: ارتفاع ضغط الدم للمريض أحمد</a></li>
+                            <li><a class="dropdown-item" href="#">تنبيه: انخفاض مستوى الأكسجين للمريضة سارة</a></li>
+                            <li><a class="dropdown-item" href="#">تذكير: موعد متابعة المريض محمد</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ملخص البيانات -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-people"></i> إجمالي المرضى</h5>
+                            <p class="card-text display-6">12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-heart-pulse"></i> حالات مستقرة</h5>
+                            <p class="card-text display-6">9</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-warning text-dark">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-exclamation-triangle"></i> تحت المراقبة</h5>
+                            <p class="card-text display-6">2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-exclamation-circle"></i> حالات حرجة</h5>
+                            <p class="card-text display-6">1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قائمة المرضى مع البيانات الحيوية -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5>المرضى تحت المراقبة</h5>
+                            <button class="btn btn-sm btn-primary">عرض الكل</button>
+                        </div>
+                        <div class="card-body">
+                            <!-- المريض الأول -->
+                            <div class="patient-card card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-3">
+                                                    <img src="https://via.placeholder.com/50" class="rounded-circle" alt="صورة المريض">
+                                                </div>
+                                                <div>
+                                                    <h5 class="mb-0">أحمد محمود</h5>
+                                                    <small class="text-muted">رقم المريض: 12345</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-thermometer-half text-danger"></i>
+                                                        <div class="value">38.5°C</div>
+                                                        <div class="label">درجة الحرارة</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-heart-pulse text-primary"></i>
+                                                        <div class="value">95</div>
+                                                        <div class="label">نبضات القلب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-activity text-warning"></i>
+                                                        <div class="value">140/90</div>
+                                                        <div class="label">ضغط الدم</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-droplet text-info"></i>
+                                                        <div class="value">96%</div>
+                                                        <div class="label">الأكسجين</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 d-flex align-items-center justify-content-end">
+                                            <span class="badge bg-warning p-2">تحت المراقبة</span>
+                                            <button class="btn btn-sm btn-outline-primary ms-2">عرض التفاصيل</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- المريض الثاني -->
+                            <div class="patient-card card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-3">
+                                                    <img src="https://via.placeholder.com/50" class="rounded-circle" alt="صورة المريض">
+                                                </div>
+                                                <div>
+                                                    <h5 class="mb-0">سارة أحمد</h5>
+                                                    <small class="text-muted">رقم المريض: 12346</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-thermometer-half text-success"></i>
+                                                        <div class="value">37.1°C</div>
+                                                        <div class="label">درجة الحرارة</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-heart-pulse text-primary"></i>
+                                                        <div class="value">78</div>
+                                                        <div class="label">نبضات القلب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-activity text-success"></i>
+                                                        <div class="value">120/80</div>
+                                                        <div class="label">ضغط الدم</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-droplet text-danger"></i>
+                                                        <div class="value">92%</div>
+                                                        <div class="label">الأكسجين</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 d-flex align-items-center justify-content-end">
+                                            <span class="badge bg-danger p-2">حالة حرجة</span>
+                                            <button class="btn btn-sm btn-outline-primary ms-2">عرض التفاصيل</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- المريض الثالث -->
+                            <div class="patient-card card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-3">
+                                                    <img src="https://via.placeholder.com/50" class="rounded-circle" alt="صورة المريض">
+                                                </div>
+                                                <div>
+                                                    <h5 class="mb-0">محمد علي</h5>
+                                                    <small class="text-muted">رقم المريض: 12347</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-thermometer-half text-success"></i>
+                                                        <div class="value">36.8°C</div>
+                                                        <div class="label">درجة الحرارة</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-heart-pulse text-warning"></i>
+                                                        <div class="value">105</div>
+                                                        <div class="label">نبضات القلب</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-activity text-success"></i>
+                                                        <div class="value">125/85</div>
+                                                        <div class="label">ضغط الدم</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="vital-sign bg-light">
+                                                        <i class="bi bi-droplet text-success"></i>
+                                                        <div class="value">98%</div>
+                                                        <div class="label">الأكسجين</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 d-flex align-items-center justify-content-end">
+                                            <span class="badge bg-warning p-2">تحت المراقبة</span>
+                                            <button class="btn btn-sm btn-outline-primary ms-2">عرض التفاصيل</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الرسوم البيانية والتنبؤات -->
+            <div class="row">
+                <!-- الرسم البياني للبيانات الحيوية -->
+                <div class="col-md-8 mb-4">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5>تحليل البيانات الحيوية</h5>
+                            <div>
+                                <select class="form-select form-select-sm" id="patientSelect">
+                                    <option value="1">أحمد محمود</option>
+                                    <option value="2">سارة أحمد</option>
+                                    <option value="3">محمد علي</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="vitalSignsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- التنبؤات والتحليلات -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>التنبؤات والتحليلات</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert-container">
+                                <div class="alert alert-danger">
+                                    <h6><i class="bi bi-exclamation-triangle"></i> خطر مرتفع</h6>
+                                    <p>المريضة سارة أحمد معرضة لخطر نقص الأكسجين. يرجى المتابعة الفورية.</p>
+                                    <small class="text-muted">منذ 30 دقيقة</small>
+                                </div>
+                                <div class="alert alert-warning">
+                                    <h6><i class="bi bi-exclamation-circle"></i> تحذير</h6>
+                                    <p>المريض أحمد محمود يعاني من ارتفاع في درجة الحرارة. يرجى المتابعة.</p>
+                                    <small class="text-muted">منذ ساعة</small>
+                                </div>
+                                <div class="alert alert-info">
+                                    <h6><i class="bi bi-info-circle"></i> تنبؤ</h6>
+                                    <p>تحليل البيانات يشير إلى احتمالية إصابة المريض محمد علي بالتهاب في الجهاز التنفسي.</p>
+                                    <small class="text-muted">منذ 3 ساعات</small>
+                                </div>
+                                <div class="alert alert-success">
+                                    <h6><i class="bi bi-check-circle"></i> تحسن</h6>
+                                    <p>المريض خالد سعيد يظهر تحسناً في مؤشرات ضغط الدم بعد تعديل الجرعة.</p>
+                                    <small class="text-muted">منذ 5 ساعات</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // بيانات الرسم البياني
+        const ctx = document.getElementById('vitalSignsChart').getContext('2d');
+        const vitalSignsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00'],
+                datasets: [
+                    {
+                        label: 'درجة الحرارة (°C)',
+                        data: [36.8, 37.2, 37.5, 38.1, 38.5, 38.2],
+                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    },
+                    {
+                        label: 'نبضات القلب (BPM)',
+                        data: [72, 78, 85, 90, 95, 92],
+                        borderColor: 'rgb(54, 162, 235)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    },
+                    {
+                        label: 'الأكسجين (%)',
+                        data: [98, 97, 97, 96, 96, 96],
+                        borderColor: 'rgb(75, 192, 192)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+        // تغيير بيانات الرسم البياني عند تغيير المريض
+        document.getElementById('patientSelect').addEventListener('change', function() {
+            const patientId = this.value;
+            
+            // بيانات افتراضية لكل مريض
+            let temperatureData, heartRateData, oxygenData;
+            
+            if (patientId === '1') {
+                temperatureData = [36.8, 37.2, 37.5, 38.1, 38.5, 38.2];
+                heartRateData = [72, 78, 85, 90, 95, 92];
+                oxygenData = [98, 97, 97, 96, 96, 96];
+            } else if (patientId === '2') {
+                temperatureData = [36.5, 36.7, 36.9, 37.0, 37.1, 37.0];
+                heartRateData = [65, 70, 75, 78, 78, 76];
+                oxygenData = [96, 95, 94, 93, 92, 92];
+            } else {
+                temperatureData = [36.6, 36.7, 36.8, 36.8, 36.7, 36.8];
+                heartRateData = [80, 90, 100, 105, 102, 98];
+                oxygenData = [97, 97, 98, 98, 98, 98];
+            }
+            
+            // تحديث بيانات الرسم البياني
+            vitalSignsChart.data.datasets[0].data = temperatureData;
+            vitalSignsChart.data.datasets[1].data = heartRateData;
+            vitalSignsChart.data.datasets[2].data = oxygenData;
+            vitalSignsChart.update();
+        });
+    </script>
+</body>
+</html>

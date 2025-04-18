@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | الفا بوكس</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 280px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem;
+        }
+        
+        .main-content {
+            margin-right: 280px;
+            padding: 2rem;
+        }
+        
+        .vital-sign-card {
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .vital-sign-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
+            <img src="../images/Capture.PNG" alt="الفا بوكس" height="40" class="me-2">
+            <h5 class="mb-0">الفا بوكس</h5>
+        </div>
+        
+        <div class="mb-4">
+            <div class="d-flex align-items-center mb-3">
+                <img src="../images/avatar-placeholder.png" alt="" class="rounded-circle me-2" width="40" height="40">
+                <div>
+                    <h6 class="mb-0" id="userName">اسم المستخدم</h6>
+                    <small class="text-muted" id="userRole">نوع المستخدم</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="list-group list-group-flush">
+            <a href="index.html" class="list-group-item list-group-item-action active">
+                <i class="bi bi-speedometer2 me-2"></i>
+                لوحة التحكم
+            </a>
+            <a href="patients.html" class="list-group-item list-group-item-action">
+                <i class="bi bi-people me-2"></i>
+                المرضى
+            </a>
+            <a href="readings.html" class="list-group-item list-group-item-action">
+                <i class="bi bi-heart-pulse me-2"></i>
+                القراءات
+            </a>
+            <a href="alerts.html" class="list-group-item list-group-item-action">
+                <i class="bi bi-bell me-2"></i>
+                التنبيهات
+            </a>
+            <a href="profile.html" class="list-group-item list-group-item-action">
+                <i class="bi bi-person me-2"></i>
+                الملف الشخصي
+            </a>
+            <button class="list-group-item list-group-item-action text-danger" id="logoutButton">
+                <i class="bi bi-box-arrow-left me-2"></i>
+                تسجيل الخروج
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="mb-1">مرحباً بك في لوحة التحكم</h4>
+                <p class="text-muted mb-0">آخر تحديث: <span id="lastUpdate">-</span></p>
+            </div>
+            <button class="btn btn-primary d-md-none" type="button" data-bs-toggle="sidebar">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        
+        <!-- Vital Signs Summary -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-4">
+                <div class="card vital-sign-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-heart-pulse text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">معدل النبض</h6>
+                                <h3 class="mb-0" id="heartRate">-- <small>نبضة/دقيقة</small></h3>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 4px;">
+                            <div class="progress-bar" id="heartRateProgress" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card vital-sign-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-thermometer-half text-warning"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">درجة الحرارة</h6>
+                                <h3 class="mb-0" id="temperature">-- <small>°C</small></h3>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 4px;">
+                            <div class="progress-bar bg-warning" id="temperatureProgress" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card vital-sign-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                <i class="bi bi-droplet text-success"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">نسبة الأكسجين</h6>
+                                <h3 class="mb-0" id="oxygen">-- <small>%</small></h3>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 4px;">
+                            <div class="progress-bar bg-success" id="oxygenProgress" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Charts -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-8">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">المؤشرات الحيوية على مدار اليوم</h5>
+                        <div class="chart-container">
+                            <canvas id="vitalSignsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">التنبيهات الأخيرة</h5>
+                        <div id="alertsList" class="list-group list-group-flush">
+                            <!-- Alerts will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Patients -->
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title mb-0">المرضى النشطون</h5>
+                    <a href="patients.html" class="btn btn-sm btn-outline-primary">عرض الكل</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>المريض</th>
+                                <th>العمر</th>
+                                <th>آخر قراءة</th>
+                                <th>الحالة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patientsTableBody">
+                            <!-- Patients will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // التحقق من تسجيل الدخول
+            const token = localStorage.getItem(API_CONFIG.STORAGE_KEYS.TOKEN);
+            if (!token) {
+                window.location.href = '../auth/login.html';
+                return;
+            }
+
+            // معالجة تسجيل الخروج
+            document.getElementById('logoutButton').addEventListener('click', async function() {
+                try {
+                    await apiService.logout();
+                } catch (error) {
+                    console.error('خطأ في تسجيل الخروج:', error);
+                }
+            });
+
+            // تحميل بيانات المستخدم
+            const userInfo = JSON.parse(localStorage.getItem(API_CONFIG.STORAGE_KEYS.USER_INFO) || '{}');
+            document.getElementById('userName').textContent = `${userInfo.first_name} ${userInfo.last_name}`;
+            document.getElementById('userRole').textContent = userInfo.user_type === 'doctor' ? 'طبيب' : 'مريض';
+            
+            // تهيئة الرسم البياني
+            const ctx = document.getElementById('vitalSignsChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: 'معدل النبض',
+                            data: [],
+                            borderColor: 'rgb(255, 99, 132)',
+                            tension: 0.3
+                        },
+                        {
+                            label: 'درجة الحرارة',
+                            data: [],
+                            borderColor: 'rgb(255, 159, 64)',
+                            tension: 0.3
+                        },
+                        {
+                            label: 'نسبة الأكسجين',
+                            data: [],
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false
+                        }
+                    }
+                }
+            });
+            
+            // تحديث المؤشرات الحيوية
+            async function updateVitalSigns() {
+                try {
+                    const readings = await apiService.getVitalSigns();
+                    
+                    if (readings.length > 0) {
+                        const latest = readings[readings.length - 1];
+                        
+                        // تحديث القيم الحالية
+                        document.getElementById('heartRate').innerHTML = `${latest.heart_rate} <small>نبضة/دقيقة</small>`;
+                        document.getElementById('temperature').innerHTML = `${latest.temperature} <small>°C</small>`;
+                        document.getElementById('oxygen').innerHTML = `${latest.oxygen} <small>%</small>`;
+                        
+                        // تحديث شرائط التقدم
+                        document.getElementById('heartRateProgress').style.width = `${(latest.heart_rate / 200) * 100}%`;
+                        document.getElementById('temperatureProgress').style.width = `${((latest.temperature - 35) / 5) * 100}%`;
+                        document.getElementById('oxygenProgress').style.width = `${latest.oxygen}%`;
+                        
+                        // تحديث الرسم البياني
+                        const labels = readings.map(r => new Date(r.timestamp).toLocaleTimeString());
+                        const heartRateData = readings.map(r => r.heart_rate);
+                        const temperatureData = readings.map(r => r.temperature);
+                        const oxygenData = readings.map(r => r.oxygen);
+                        
+                        chart.data.labels = labels;
+                        chart.data.datasets[0].data = heartRateData;
+                        chart.data.datasets[1].data = temperatureData;
+                        chart.data.datasets[2].data = oxygenData;
+                        chart.update();
+                        
+                        // تحديث وقت آخر تحديث
+                        document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+                    }
+                } catch (error) {
+                    console.error('Error updating vital signs:', error);
+                }
+            }
+            
+            // تحديث التنبيهات
+            async function updateAlerts() {
+                try {
+                    const alerts = await apiService.getAlerts();
+                    document.getElementById('alertsList').innerHTML = '';
+                    
+                    alerts.slice(0, 5).forEach(alert => {
+                        const alertElement = document.createElement('div');
+                        alertElement.className = `list-group-item list-group-item-${alert.severity}`;
+                        alertElement.innerHTML = `
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">${alert.title}</h6>
+                                <small>${new Date(alert.timestamp).toLocaleTimeString()}</small>
+                            </div>
+                            <p class="mb-1">${alert.message}</p>
+                        `;
+                        document.getElementById('alertsList').appendChild(alertElement);
+                    });
+                } catch (error) {
+                    console.error('Error updating alerts:', error);
+                }
+            }
+            
+            // تحديث قائمة المرضى
+            async function updatePatients() {
+                try {
+                    const patients = await apiService.getPatients();
+                    document.getElementById('patientsTableBody').innerHTML = '';
+                    
+                    patients.forEach(patient => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="../images/avatar-placeholder.png" alt="" class="rounded-circle me-2" width="32" height="32">
+                                    <div>
+                                        <h6 class="mb-0">${patient.first_name} ${patient.last_name}</h6>
+                                        <small class="text-muted">#${patient.id}</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>${calculateAge(patient.date_of_birth)} سنة</td>
+                            <td>${new Date(patient.last_reading_time).toLocaleString()}</td>
+                            <td>
+                                <span class="badge bg-${getStatusBadgeClass(patient.status)}">${patient.status}</span>
+                            </td>
+                            <td>
+                                <a href="patient-details.html?id=${patient.id}" class="btn btn-sm btn-outline-primary">
+                                    عرض التفاصيل
+                                </a>
+                            </td>
+                        `;
+                        document.getElementById('patientsTableBody').appendChild(row);
+                    });
+                } catch (error) {
+                    console.error('Error updating patients:', error);
+                }
+            }
+            
+            // حساب العمر
+            function calculateAge(dateOfBirth) {
+                const today = new Date();
+                const birthDate = new Date(dateOfBirth);
+                let age = today.getFullYear() - birthDate.getFullYear();
+                const m = today.getMonth() - birthDate.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                return age;
+            }
+            
+            // تحديد لون حالة المريض
+            function getStatusBadgeClass(status) {
+                switch (status.toLowerCase()) {
+                    case 'stable':
+                        return 'success';
+                    case 'warning':
+                        return 'warning';
+                    case 'critical':
+                        return 'danger';
+                    default:
+                        return 'secondary';
+                }
+            }
+            
+            // تحديث البيانات كل 5 ثواني
+            updateVitalSigns();
+            updateAlerts();
+            updatePatients();
+            
+            setInterval(() => {
+                updateVitalSigns();
+                updateAlerts();
+            }, API_CONFIG.UPDATE_INTERVAL);
+            
+            // تفعيل زر القائمة الجانبية في الشاشات الصغيرة
+            const sidebarToggle = document.querySelector('[data-bs-toggle="sidebar"]');
+            const sidebar = document.querySelector('.sidebar');
+            
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('show');
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    sidebar.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

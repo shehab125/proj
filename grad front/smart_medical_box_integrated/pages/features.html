@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المميزات والتقنيات | الفا بوكس</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- خط عربي من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/Capture.PNG" alt="" height="50" width="100">
+                <span class="text-primary">ِالفا بوكس</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">نبذة عن المشروع</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="features.html">المميزات والتقنيات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="components.html">المكونات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="demo.html">العروض التوضيحية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">الأسئلة الشائعة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../auth/login.html" class="btn btn-outline-primary me-2">تسجيل الدخول</a>
+                    <a href="../auth/register.html" class="btn btn-primary">التسجيل</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- رأس الصفحة -->
+    <header class="page-header py-5 mt-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="fw-bold mb-4">المميزات والتقنيات</h1>
+                    <p class="lead">اكتشف المميزات المتقدمة والتقنيات المبتكرة التي تجعل الفا بوكس فريداً من نوعه</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images/features-header.png" alt="مميزات الفا بوكس" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم المميزات الرئيسية -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">المميزات الرئيسية</h2>
+                <p class="lead">تعرف على المميزات التي تجعل الفا بوكس الحل الأمثل لإدارة الأدوية والرعاية الصحية</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="bi bi-alarm"></i>
+                            </div>
+                            <h3 class="card-title h5">نظام تذكير ذكي</h3>
+                            <p class="card-text">تنبيهات صوتية وضوئية في الأوقات المحددة لتناول الأدوية، مع إشعارات على الهاتف المحمول وتذكيرات مخصصة حسب احتياجات المستخدم.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تنبيهات متعددة الوسائط</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> جدولة مرنة للجرعات</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تذكيرات متكررة حتى تناول الدواء</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                            <h3 class="card-title h5">تنظيم آلي للأدوية</h3>
+                            <p class="card-text">نظام آلي لتنظيم وتوزيع الأدوية في حجرات منفصلة حسب مواعيد تناولها، مع التحقق من صحة الجرعات ومنع الأخطاء الدوائية.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> حجرات منفصلة للجرعات</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تحقق آلي من الجرعات</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تنبيه عند نفاد الأدوية</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <h3 class="card-title h5">متابعة المؤشرات الصحية</h3>
+                            <p class="card-text">تكامل مع أجهزة قياس المؤشرات الحيوية لتتبع الحالة الصحية وتحليلها، مع عرض البيانات بطريقة سهلة الفهم وإرسال تقارير دورية.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> قياس ضغط الدم ومستوى السكر</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تتبع معدل ضربات القلب</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تقارير صحية دورية</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h3 class="card-title h5">التحقق من التفاعلات الدوائية</h3>
+                            <p class="card-text">نظام ذكي للتحقق من التفاعلات المحتملة بين الأدوية المختلفة، وتنبيه المستخدم والطبيب المعالج في حالة وجود تفاعلات خطيرة.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> قاعدة بيانات شاملة للأدوية</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تنبيهات فورية للتفاعلات</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تحديثات مستمرة للمعلومات الدوائية</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="bi bi-translate"></i>
+                            </div>
+                            <h3 class="card-title h5">واجهة متعددة اللغات</h3>
+                            <p class="card-text">واجهة مستخدم سهلة الاستخدام باللغتين العربية والإنجليزية، مع تصميم متجاوب يعمل على جميع الأجهزة من الهواتف الذكية إلى أجهزة الكمبيوتر.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> دعم كامل للغة العربية</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تصميم متجاوب</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> سهولة التنقل والاستخدام</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="bi bi-cloud-arrow-up"></i>
+                            </div>
+                            <h3 class="card-title h5">تخزين آمن للبيانات</h3>
+                            <p class="card-text">تخزين آمن ومشفر لجميع البيانات الصحية والدوائية، مع إمكانية مزامنة البيانات عبر الأجهزة المختلفة والوصول إليها في أي وقت ومن أي مكان.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> تشفير البيانات</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> نسخ احتياطي تلقائي</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> مزامنة عبر الأجهزة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التقنيات المستخدمة -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">التقنيات المستخدمة</h2>
+                <p class="lead">تعرف على التقنيات المتطورة التي تدعم الفا بوكس</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h4 mb-4">الذكاء الاصطناعي وتعلم الآلة</h3>
+                            <p class="card-text">يستخدم الفا بوكس خوارزميات الذكاء الاصطناعي وتعلم الآلة لتحليل البيانات الصحية والتنبؤ بالمخاطر المحتملة، مما يساعد في:</p>
+                            <ul class="mt-3">
+                                <li>تحليل أنماط تناول الأدوية وتحديد المشكلات المحتملة</li>
+                                <li>التنبؤ بالتغيرات في الحالة الصحية بناءً على المؤشرات الحيوية</li>
+                                <li>تقديم توصيات مخصصة لتحسين الالتزام بالعلاج</li>
+                                <li>تحسين دقة التشخيص والعلاج من خلال التعلم المستمر</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <img src="../images/ai-tech.png" alt="تقنية الذكاء الاصطناعي" class="img-fluid rounded" style="max-height: 200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h4 mb-4">إنترنت الأشياء (IoT)</h3>
+                            <p class="card-text">يعتمد الفا بوكس على تقنيات إنترنت الأشياء لربط الأجهزة المختلفة وجمع البيانات في الوقت الفعلي، مما يتيح:</p>
+                            <ul class="mt-3">
+                                <li>اتصال سلس بين الفا بوكس وأجهزة قياس المؤشرات الحيوية</li>
+                                <li>مراقبة مستمرة للحالة الصحية والأدوية</li>
+                                <li>تبادل البيانات مع الأطباء والمستشفيات عند الحاجة</li>
+                                <li>التحكم عن بعد في إعدادات الجهاز وتحديثه</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <img src="../images/iot-tech.png" alt="تقنية إنترنت الأشياء" class="img-fluid rounded" style="max-height: 200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h4 mb-4">الحوسبة السحابية</h3>
+                            <p class="card-text">تستخدم الحوسبة السحابية لتخزين ومعالجة البيانات بشكل آمن وفعال، مما يوفر:</p>
+                            <ul class="mt-3">
+                                <li>تخزين آمن ومشفر لجميع البيانات الصحية والدوائية</li>
+                                <li>إمكانية الوصول إلى البيانات من أي مكان وفي أي وقت</li>
+                                <li>معالجة البيانات الضخمة واستخراج الأنماط والاتجاهات</li>
+                                <li>تحديثات تلقائية للبرمجيات والخوارزميات</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <img src="../images/cloud-tech.png" alt="تقنية الحوسبة السحابية" class="img-fluid rounded" style="max-height: 200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h4 mb-4">الروبوتات الدقيقة</h3>
+                            <p class="card-text">تستخدم تقنيات الروبوتات الدقيقة في آلية توزيع وتنظيم الأدوية داخل الفا بوكس، مما يضمن:</p>
+                            <ul class="mt-3">
+                                <li>دقة عالية في توزيع الجرعات الدوائية</li>
+                                <li>تعامل آمن مع مختلف أشكال وأحجام الأدوية</li>
+                                <li>حركة سلسة وهادئة لآليات التوزيع</li>
+                                <li>استهلاك منخفض للطاقة لزيادة عمر البطارية</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <img src="../images/robotics-tech.png" alt="تقنية الروبوتات الدقيقة" class="img-fluid rounded" style="max-height: 200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الإحصائيات والأرقام -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">الإحصائيات والأرقام</h2>
+                <p class="lead">تأثير الفا بوكس على الرعاية الصحية بالأرقام</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">85%</div>
+                            <h3 class="h5">تحسن في الالتزام بالأدوية</h3>
+                            <p class="text-muted">زيادة نسبة الالتزام بتناول الأدوية في المواعيد المحددة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">67%</div>
+                            <h3 class="h5">انخفاض في الأخطاء الدوائية</h3>
+                            <p class="text-muted">تقليل نسبة الأخطاء في تناول الجرعات أو تداخل الأدوية</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">42%</div>
+                            <h3 class="h5">انخفاض في زيارات الطوارئ</h3>
+                            <p class="text-muted">تقليل الحاجة لزيارات الطوارئ بسبب مشكلات متعلقة بالأدوية</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">93%</div>
+                            <h3 class="h5">رضا المستخدمين</h3>
+                            <p class="text-muted">نسبة رضا المستخدمين عن تجربة استخدام الفا بوكس</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <p class="text-muted">* الإحصائيات بناءً على دراسات أولية أجريت على عينة من المستخدمين خلال فترة الاختبار</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم مقارنة المميزات -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">مقارنة المميزات</h2>
+                <p class="lead">كيف يتفوق الفا بوكس على الحلول التقليدية</p>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">المميزات</th>
+                            <th scope="col">الفا بوكس</th>
+                            <th scope="col">منظمات الأدوية التقليدية</th>
+                            <th scope="col">تطبيقات تذكير الأدوية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>تنظيم الأدوية</td>
+                            <td class="text-center text-success"><i class="bi bi-check-circle-fill"></i> آلي بالكامل</td>
+                            <td class="text-center text-warning"><i class="bi bi-dash-circle-fill"></i> يدوي</td>
+                            <td class="text-center text-danger"><i class="bi bi-x-circle-fill"></i> غير متوفر</td>
+                        </tr>
+                        <tr>
+                            <td>تذكير بمواعيد الأدوية</td>
+                            <td class="text-center text-success"><i class="bi bi-check-circle-fill"></i> متعدد الوسائط</td>
+                            <td class="text-center text-danger"><i class="bi bi-x-circle-fill"></i> غير متوفر</td>
+                            <td class="text-center text-success"><i class="bi bi-check-circle-fill"></i> إشعارات فقط</td>
+                        </tr>
+                        <tr>
+                            <td>متابعة المؤشرات الحيوية</td>
+                            <td class="text-center text-success"><i class="bi bi-check-circle-fill"></i> متكامل</td>
+                            <td class="text-center text-danger"><i class="bi bi-x-circle-fill"></i> غير متوفر</td>
+                            <td class="text-center text-warning"><i class="bi bi-dash-circle-fill"></i> محدود</td>
+                        </tr>
+                        <tr>
+                            <td>التحقق من التفاعلات الدوائية</td>
+                            <td class="text-center text-success"><i class="bi bi-check-circle-fill"></i> تلقائي</td>
+                            <td class="text-center text-danger"><i class="bi bi-x-circle-fill"></i> غير متوفر</td>
+                            <td class="text-center text-warning"><i class="bi bi-dash-circle-fill"></i> محدود</td>
+                        </tr>
+                        <tr>
+                            <td>تحليل البيانات والتنبؤ</td>
+                            <td class="text-center text-success"><i class="bi bi-check-circle-fill"></i> متقدم</td>
+                            <td class="text-center text-danger"><i class="bi bi-x-circle-fill"></i> غير متوفر</td>
+                            <td class="text-center text-warning"><i class="bi bi-dash-circle-fill"></i> أساسي</td>
+                        </tr>
+                        <tr>
+                            <td>مشاركة البيانات مع الأطباء</td>
+                            <td class="text-center text-success"><i class="bi bi-check-circle-fill"></i> سهلة وآمنة</td>
+                            <td class="text-center text-danger"><i class="bi bi-x-circle-fill"></i> غير متوفر</td>
+                            <td class="text-center text-warning"><i class="bi bi-dash-circle-fill"></i> محدودة</td>
+                        </tr>
+                        <tr>
+                            <td>دعم اللغة العربية</td>
+                            <td class="text-center text-success"><i class="bi bi-check-circle-fill"></i> كامل</td>
+                            <td class="text-center text-warning"><i class="bi bi-dash-circle-fill"></i> جزئي</td>
+                            <td class="text-center text-warning"><i class="bi bi-dash-circle-fill"></i> متفاوت</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الدعوة للتصرف -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-lg-start text-center">
+                    <h2 class="fw-bold mb-3">هل أنت مستعد للاستفادة من هذه المميزات المتقدمة؟</h2>
+                    <p class="lead mb-0">سجل اهتمامك الآن للحصول على معلومات حصرية ودعوة للتجربة المبكرة</p>
+                </div>
+                <div class="col-lg-4 text-lg-end text-center mt-4 mt-lg-0">
+                    <a href="contact.html" class="btn btn-light btn-lg">سجل اهتمامك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>الفا بوكس</h5>
+                    <p>حل مبتكر لإدارة الأدوية والتنبؤ بالحالة الصحية باستخدام الذكاء الاصطناعي وإنترنت الأشياء.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-white">نبذة عنا</a></li>
+                        <li><a href="features.html" class="text-white">المميزات</a></li>
+                        <li><a href="contact.html" class="text-white">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>الدعم</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html" class="text-white">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="text-white">الدعم الفني</a></li>
+                        <li><a href="#" class="text-white">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-white">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>تواصل معنا</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i> قسم الذكاء الاصطناعي، جامعه حلوان التكنولوجيا الدوليه</li>
+                        <li><i class="bi bi-telephone me-2"></i> +201002769697</li>
+                        <li><i class="bi bi-envelope me-2"></i> shehabhosny889@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 الفا بوكس. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">تم التطوير بواسطة <a href="#" class="text-white">فريق الفا</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

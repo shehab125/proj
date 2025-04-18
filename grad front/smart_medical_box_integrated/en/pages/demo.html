@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo | Alpha Box</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../../images/Capture.PNG" alt="" height="50" width="100">
+                <span class="text-primary">Alpha Box</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="components.html">Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="demo.html">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../../index.html" class="btn btn-outline-secondary me-2">عربي</a>
+                    <a href="../auth/login.html" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="../auth/register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Section -->
+    <section class="demo-section py-5 mt-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Alpha Box Demo</h1>
+            
+            <!-- Interactive Demo -->
+            <div class="interactive-demo mb-5">
+                <h2 class="text-center mb-4">Interactive Demo</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="demo-container">
+                            <div class="vital-signs-chart-container mb-4">
+                                <canvas id="vitalSignsChart"></canvas>
+                            </div>
+                            
+                            <div class="demo-controls">
+                                <h3>Control Vital Signs</h3>
+                                <p>Use the sliders below to simulate different vital sign values and see how the system responds:</p>
+                                
+                                <div class="vital-sign-control mb-4">
+                                    <label for="heartRateSlider">Heart Rate: <span id="heartRateValue">75</span> BPM</label>
+                                    <input type="range" class="form-range" id="heartRateSlider" min="40" max="140" value="75">
+                                    <div class="range-info d-flex justify-content-between">
+                                        <small>40</small>
+                                        <small class="text-success">60-100 (Normal)</small>
+                                        <small>140</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="vital-sign-control mb-4">
+                                    <label for="temperatureSlider">Temperature: <span id="temperatureValue">37.0</span> °C</label>
+                                    <input type="range" class="form-range" id="temperatureSlider" min="35.0" max="40.0" step="0.1" value="37.0">
+                                    <div class="range-info d-flex justify-content-between">
+                                        <small>35.0</small>
+                                        <small class="text-success">36.5-37.5 (Normal)</small>
+                                        <small>40.0</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="vital-sign-control mb-4">
+                                    <label for="oxygenSlider">Oxygen Level: <span id="oxygenValue">98</span> %</label>
+                                    <input type="range" class="form-range" id="oxygenSlider" min="80" max="100" value="98">
+                                    <div class="range-info d-flex justify-content-between">
+                                        <small>80</small>
+                                        <small class="text-success">95-100 (Normal)</small>
+                                        <small>100</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="alerts-container mt-4" id="alertsContainer">
+                                    <!-- Alerts will be dynamically added here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Device Demo -->
+            <div class="device-demo mb-5">
+                <h2 class="text-center mb-4">Device Demo</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="device-simulation">
+                            <div class="device-screen" id="deviceScreen">
+                                <div class="device-header">
+                                    <h3>Alpha Box</h3>
+                                    <div class="device-status" id="deviceStatus">Device Off</div>
+                                </div>
+                                <div class="vital-signs-display">
+                                    <div class="vital-sign">
+                                        <span class="label">Heart Rate:</span>
+                                        <span class="value" id="demoHeartRate">--</span>
+                                        <span class="unit">BPM</span>
+                                    </div>
+                                    <div class="vital-sign">
+                                        <span class="label">Temperature:</span>
+                                        <span class="value" id="demoTemperature">--</span>
+                                        <span class="unit">°C</span>
+                                    </div>
+                                    <div class="vital-sign">
+                                        <span class="label">Oxygen Level:</span>
+                                        <span class="value" id="demoOxygen">--</span>
+                                        <span class="unit">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-controls">
+                                <button class="btn btn-primary" id="powerButton">
+                                    <i class="fas fa-power-off"></i> Power
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="device-instructions">
+                            <h3>How to Use the Device</h3>
+                            <ol>
+                                <li>Press the power button to turn on the device</li>
+                                <li>Connect the sensors to the patient</li>
+                                <li>Wait for the device to initialize and start readings</li>
+                                <li>Monitor the vital signs on the display</li>
+                                <li>Check the alerts panel for any abnormal readings</li>
+                            </ol>
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i>
+                                This is a simulation. In real usage, the device will automatically connect to sensors and start monitoring.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Demo -->
+            <div class="dashboard-demo">
+                <h2 class="text-center mb-4">Dashboard Demo</h2>
+                <div class="dashboard-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="dashboard-card">
+                                <h4>Patient Overview</h4>
+                                <div class="patient-info">
+                                    <div class="info-item">
+                                        <span class="label">Name:</span>
+                                        <span class="value">John Doe</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Age:</span>
+                                        <span class="value">45</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Status:</span>
+                                        <span class="value text-success">Stable</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="dashboard-card">
+                                <h4>Recent Alerts</h4>
+                                <div class="alerts-list" id="dashboardAlerts">
+                                    <div class="alert alert-success">
+                                        <i class="fas fa-check-circle me-2"></i>
+                                        All vital signs are within normal range
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="dashboard-card">
+                                <h4>Vital Signs History</h4>
+                                <div class="chart-container">
+                                    <canvas id="historyChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Alpha Box</h5>
+                    <p>An innovative solution for medication management and health prediction using AI and IoT.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="features.html" class="text-white">Features</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">FAQ</a></li>
+                        <li><a href="#" class="text-white">Technical Support</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i> AI Department, Helwan International Technology University</li>
+                        <li><i class="bi bi-telephone me-2"></i> +201002769697</li>
+                        <li><i class="bi bi-envelope me-2"></i> shehabhosny889@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Alpha Box. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Developed by <a href="#" class="text-white">Alpha Team</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/demo.js"></script>
+</body>
+</html> 
